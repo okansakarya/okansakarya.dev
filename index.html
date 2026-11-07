@@ -66,7 +66,8 @@
     .tech-track { display:flex; width:max-content; gap:14px; padding:14px 0; animation:marquee 34s linear infinite; }
     .tech-window:hover .tech-track { animation-play-state:paused; }
     .tech-item { display:flex; align-items:center; gap:12px; min-width:190px; padding:14px 18px; background:var(--surface); border:1px solid var(--border); border-radius:15px; }
-    .tech-icon { width:34px; height:34px; display:grid; place-items:center; color:var(--cyan); background:var(--surface-3); border-radius:10px; font-weight:800; }
+    .tech-icon { width:38px; height:38px; flex:0 0 38px; display:grid; place-items:center; background:var(--surface-3); border:1px solid var(--border); border-radius:11px; }
+    .tech-icon img { display:block; width:25px; height:25px; object-fit:contain; }
     .tech-item strong { display:block; font-size:13px; }
     .tech-item small { display:block; color:var(--muted); font-size:10px; }
     @keyframes marquee { to { transform:translateX(-50%); } }
@@ -152,21 +153,21 @@
       </div>
       <div class="tech-window">
         <div class="tech-track" aria-label="Teknoloji listesi">
-          <div class="tech-item"><span class="tech-icon">F</span><span><strong>Flutter</strong><small>Cross-platform mobil</small></span></div>
-          <div class="tech-item"><span class="tech-icon">Py</span><span><strong>Python</strong><small>Backend geliştirme</small></span></div>
-          <div class="tech-item"><span class="tech-icon">API</span><span><strong>FastAPI</strong><small>REST API</small></span></div>
-          <div class="tech-item"><span class="tech-icon">DB</span><span><strong>PostgreSQL</strong><small>İlişkisel veritabanı</small></span></div>
-          <div class="tech-item"><span class="tech-icon">S</span><span><strong>Supabase</strong><small>Backend platformu</small></span></div>
-          <div class="tech-item"><span class="tech-icon">R</span><span><strong>React</strong><small>Web arayüzleri</small></span></div>
-          <div class="tech-item"><span class="tech-icon">Git</span><span><strong>Git &amp; GitHub</strong><small>Versiyon kontrolü</small></span></div>
+          <div class="tech-item"><span class="tech-icon"><img src="https://cdn.simpleicons.org/flutter/02569B" alt="" aria-hidden="true"></span><span><strong>Flutter</strong><small>Cross-platform mobil</small></span></div>
+          <div class="tech-item"><span class="tech-icon"><img src="https://cdn.simpleicons.org/python/3776AB" alt="" aria-hidden="true"></span><span><strong>Python</strong><small>Backend geliştirme</small></span></div>
+          <div class="tech-item"><span class="tech-icon"><img src="https://cdn.simpleicons.org/fastapi/009688" alt="" aria-hidden="true"></span><span><strong>FastAPI</strong><small>REST API</small></span></div>
+          <div class="tech-item"><span class="tech-icon"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="" aria-hidden="true"></span><span><strong>PostgreSQL</strong><small>İlişkisel veritabanı</small></span></div>
+          <div class="tech-item"><span class="tech-icon"><img src="https://cdn.simpleicons.org/supabase/3FCF8E" alt="" aria-hidden="true"></span><span><strong>Supabase</strong><small>Backend platformu</small></span></div>
+          <div class="tech-item"><span class="tech-icon"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="" aria-hidden="true"></span><span><strong>React</strong><small>Web arayüzleri</small></span></div>
+          <div class="tech-item"><span class="tech-icon"><img src="https://cdn.simpleicons.org/github/F0F6FC" alt="" aria-hidden="true"></span><span><strong>Git &amp; GitHub</strong><small>Versiyon kontrolü</small></span></div>
           <!-- Kesintisiz kayan animasyon için listenin tekrarı -->
-          <div class="tech-item" aria-hidden="true"><span class="tech-icon">F</span><span><strong>Flutter</strong><small>Cross-platform mobil</small></span></div>
-          <div class="tech-item" aria-hidden="true"><span class="tech-icon">Py</span><span><strong>Python</strong><small>Backend geliştirme</small></span></div>
-          <div class="tech-item" aria-hidden="true"><span class="tech-icon">API</span><span><strong>FastAPI</strong><small>REST API</small></span></div>
-          <div class="tech-item" aria-hidden="true"><span class="tech-icon">DB</span><span><strong>PostgreSQL</strong><small>İlişkisel veritabanı</small></span></div>
-          <div class="tech-item" aria-hidden="true"><span class="tech-icon">S</span><span><strong>Supabase</strong><small>Backend platformu</small></span></div>
-          <div class="tech-item" aria-hidden="true"><span class="tech-icon">R</span><span><strong>React</strong><small>Web arayüzleri</small></span></div>
-          <div class="tech-item" aria-hidden="true"><span class="tech-icon">Git</span><span><strong>Git &amp; GitHub</strong><small>Versiyon kontrolü</small></span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><img src="https://cdn.simpleicons.org/flutter/02569B" alt=""></span><span><strong>Flutter</strong><small>Cross-platform mobil</small></span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><img src="https://cdn.simpleicons.org/python/3776AB" alt=""></span><span><strong>Python</strong><small>Backend geliştirme</small></span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><img src="https://cdn.simpleicons.org/fastapi/009688" alt=""></span><span><strong>FastAPI</strong><small>REST API</small></span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt=""></span><span><strong>PostgreSQL</strong><small>İlişkisel veritabanı</small></span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><img src="https://cdn.simpleicons.org/supabase/3FCF8E" alt=""></span><span><strong>Supabase</strong><small>Backend platformu</small></span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><img src="https://cdn.simpleicons.org/react/61DAFB" alt=""></span><span><strong>React</strong><small>Web arayüzleri</small></span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><img src="https://cdn.simpleicons.org/github/F0F6FC" alt=""></span><span><strong>Git &amp; GitHub</strong><small>Versiyon kontrolü</small></span></div>
         </div>
       </div>
     </section>
@@ -194,7 +195,7 @@
           <p>Mobil veya web geliştirme fırsatları, ekip çalışmaları ya da yeni bir proje fikri için benimle iletişime geçebilirsiniz.</p>
           <div class="contact-details">
             <a href="mailto:okan@sakarya.dev">okan@sakarya.dev</a>
-            <span>Edirne, Türkiye</span>
+            <span>İstanbul, Türkiye</span>
           </div>
         </div>
         <a class="button button-primary" href="mailto:okan@sakarya.dev">✉ Mesaj Gönder</a>
