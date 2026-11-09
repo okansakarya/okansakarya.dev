@@ -1,0 +1,156 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.page--public {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--margin) 5rem;
+}
+
+.page-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  scroll-margin-top: 6rem;
+}
+
+.page-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.page-heading__eyebrow {
+  font: var(--text-label-md);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.page-heading__title {
+  margin-top: var(--space-xs);
+  font: var(--text-headline-lg);
+  letter-spacing: -0.02em;
+}
+
+.page-heading__lead {
+  max-width: 40rem;
+  margin-top: var(--space-sm);
+  color: var(--color-on-surface-variant);
+  font: var(--text-body-lg);
+}
+
+.preserve-lines {
+  white-space: pre-line;
+}
+
+.page-heading__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: var(--gutter);
+}
+
+.card-grid--dense {
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.form-grid > .span-2 {
+  grid-column: span 2;
+}
+
+.form-message {
+  font: var(--text-body-sm);
+}
+
+.form-message--error {
+  color: var(--color-error);
+}
+
+.form-message--success {
+  color: var(--color-tertiary);
+}
+
+.login-page {
+  max-width: 28rem;
+  padding-top: 5rem;
+}
+
+.page-state {
+  align-items: center;
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.page-state__icon {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.page-state__title {
+  font: var(--text-headline-sm);
+}
+
+.page-state__message {
+  max-width: 32rem;
+  color: var(--color-on-surface-variant);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: var(--gutter);
+}
+
+.stat-value {
+  font: var(--text-headline-lg);
+}
+
+.stat-caption {
+  font: var(--text-label-md);
+  color: var(--color-outline);
+}
+
+@media (max-width: 720px) {
+  .page--public {
+    padding: var(--space-lg) var(--margin-mobile) 3rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid > .span-2 {
+    grid-column: auto;
+  }
+}

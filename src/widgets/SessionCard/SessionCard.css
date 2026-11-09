@@ -1,0 +1,45 @@
+.session-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--space-sm) 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(66, 70, 86, 0.5);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-low);
+}
+
+.session-card__avatar {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.session-card__info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.session-card__label {
+  font: var(--text-label-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-outline);
+}
+
+.session-card__name {
+  overflow: hidden;
+  font: var(--text-label-lg);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.session-card > [role='status'] {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .session-card {
+    flex-basis: 100%;
+  }
+}

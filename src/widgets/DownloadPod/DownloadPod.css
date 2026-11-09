@@ -1,0 +1,46 @@
+.download-pod {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md) var(--space-lg);
+  padding: var(--space-lg);
+  border: 1px solid rgba(66, 70, 86, 0.5);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(135deg, rgba(0, 102, 255, 0.12), rgba(0, 210, 255, 0.04)),
+    var(--color-surface-low);
+}
+
+.download-pod__icon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-xl);
+  background: rgba(0, 102, 255, 0.18);
+  color: var(--color-primary);
+  font-size: 1.75rem;
+}
+
+.download-pod--apk .download-pod__icon {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-tertiary);
+}
+
+.download-pod__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.375rem;
+  min-width: 12rem;
+}
+
+.download-pod__title {
+  font: var(--text-headline-sm);
+  word-break: break-word;
+}
+
+.download-pod__meta {
+  font: var(--text-label-md);
+  color: var(--color-outline);
+}

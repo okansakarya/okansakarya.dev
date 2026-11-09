@@ -1,0 +1,54 @@
+.text-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.text-field__label {
+  font: var(--text-label-md);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+}
+
+.text-field__control {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid rgba(66, 70, 86, 0.7);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-lowest);
+  color: var(--color-on-surface);
+  font: var(--text-body-md);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.text-field__control::placeholder {
+  color: var(--color-outline);
+}
+
+.text-field__control:focus {
+  outline: none;
+  border-color: var(--color-primary-container);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.2);
+}
+
+.text-field__control--multiline {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.text-field__message {
+  font: var(--text-body-sm);
+  color: var(--color-outline);
+}
+
+.text-field--invalid .text-field__control {
+  border-color: var(--color-error);
+}
+
+.text-field--invalid .text-field__message {
+  color: var(--color-error);
+}

@@ -1,0 +1,52 @@
+.file-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: var(--space-xl) var(--space-lg);
+  border: 2px dashed rgba(66, 70, 86, 0.9);
+  border-radius: var(--radius-xl);
+  background: rgba(10, 14, 22, 0.6);
+  text-align: center;
+  transition:
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.file-dropzone--dragging {
+  border-color: var(--color-secondary-container);
+  background: rgba(0, 210, 255, 0.06);
+}
+
+.file-dropzone--disabled {
+  opacity: 0.6;
+}
+
+.file-dropzone__icon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-full);
+  background: rgba(0, 102, 255, 0.15);
+  color: var(--color-primary);
+  font-size: 1.75rem;
+}
+
+.file-dropzone__title {
+  font: var(--text-headline-sm);
+}
+
+.file-dropzone__hint {
+  max-width: 32rem;
+  color: var(--color-outline);
+}
+
+.file-dropzone__queue {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+  margin-top: var(--space-sm);
+  text-align: left;
+}

@@ -1,0 +1,65 @@
+/* Obsidian Precision design tokens (Stitch: Okan Sakarya Portfolio Platform). */
+:root {
+  color-scheme: dark;
+
+  --color-canvas: #0b0f17;
+  --color-surface: #0f131c;
+  --color-surface-lowest: #0a0e16;
+  --color-surface-low: #181c24;
+  --color-surface-container: #1c2028;
+  --color-surface-high: #262a33;
+  --color-surface-highest: #31353e;
+  --color-glass: rgba(17, 24, 39, 0.7);
+
+  --color-on-surface: #dfe2ee;
+  --color-on-surface-variant: #c2c6d8;
+  --color-outline: #8c90a1;
+  --color-outline-variant: #424656;
+
+  --color-primary: #b3c5ff;
+  --color-primary-container: #0066ff;
+  --color-secondary: #a5e7ff;
+  --color-secondary-container: #00d2ff;
+  --color-tertiary: #4edea3;
+  --color-success: #10b981;
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+
+  --gradient-primary: linear-gradient(135deg, #0066ff 0%, #00d2ff 100%);
+
+  --font-headline: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-label: 'JetBrains Mono', ui-monospace, monospace;
+
+  --text-headline-xl: 800 3rem/3.5rem var(--font-headline);
+  --text-headline-lg: 700 2rem/2.5rem var(--font-headline);
+  --text-headline-md: 600 1.5rem/2rem var(--font-headline);
+  --text-headline-sm: 600 1.125rem/1.625rem var(--font-headline);
+  --text-body-lg: 400 1rem/1.625rem var(--font-body);
+  --text-body-md: 400 0.875rem/1.375rem var(--font-body);
+  --text-body-sm: 400 0.75rem/1.125rem var(--font-body);
+  --text-label-lg: 500 0.8125rem/1.125rem var(--font-label);
+  --text-label-md: 500 0.6875rem/1rem var(--font-label);
+  --text-label-sm: 600 0.625rem/0.875rem var(--font-label);
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --gutter: 1.5rem;
+  --margin: 3rem;
+  --margin-mobile: 1.25rem;
+
+  --blur-glass: blur(16px);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --transition: 180ms ease;
+  --content-width: 80rem;
+}

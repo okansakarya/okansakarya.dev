@@ -1,0 +1,160 @@
+.app-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 15% -10%, rgba(0, 102, 255, 0.16), transparent 50%),
+    radial-gradient(ellipse at 95% 10%, rgba(0, 210, 255, 0.08), transparent 45%),
+    var(--color-canvas);
+}
+
+.app-shell__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-shell__logo {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  object-fit: contain;
+}
+
+.app-shell__name {
+  display: block;
+  font: var(--text-headline-sm);
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.app-shell__subtitle {
+  display: block;
+  font: var(--text-label-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-outline);
+}
+
+.app-shell__nav {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+/* Public layout */
+.app-shell__header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gutter);
+  height: 5rem;
+  padding: 0 var(--margin);
+  background: rgba(15, 19, 28, 0.8);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(66, 70, 86, 0.25);
+}
+
+.app-shell--public .app-shell__nav-item {
+  border-color: transparent;
+  background: transparent;
+}
+
+.app-shell__header-actions,
+.app-shell__sidebar-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.app-shell__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--margin);
+  border-top: 1px solid rgba(66, 70, 86, 0.3);
+  color: var(--color-outline);
+}
+
+/* Admin layout */
+.app-shell--admin {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+}
+
+.app-shell__sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  height: 100vh;
+  padding: var(--space-lg);
+  background: rgba(10, 14, 22, 0.85);
+  border-right: 1px solid rgba(66, 70, 86, 0.35);
+}
+
+.app-shell--admin .app-shell__nav {
+  flex: 1;
+  flex-direction: column;
+}
+
+.app-shell--admin .app-shell__nav-item {
+  justify-content: flex-start;
+}
+
+.app-shell__sidebar-actions {
+  flex-direction: column;
+}
+
+.app-shell--admin .app-shell__main {
+  min-width: 0;
+  padding: var(--space-xl) var(--margin);
+}
+
+@media (max-width: 900px) {
+  .app-shell__header {
+    height: auto;
+    flex-wrap: wrap;
+    padding: var(--space-md) var(--margin-mobile);
+  }
+
+  .app-shell--public .app-shell__nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .app-shell__footer {
+    padding: var(--space-lg) var(--margin-mobile);
+  }
+
+  .app-shell--admin {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell__sidebar {
+    position: static;
+    height: auto;
+    gap: var(--space-md);
+  }
+
+  .app-shell--admin .app-shell__nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .app-shell--admin .app-shell__nav-item {
+    width: auto;
+  }
+
+  .app-shell__sidebar-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .app-shell--admin .app-shell__main {
+    padding: var(--space-lg) var(--margin-mobile);
+  }
+}

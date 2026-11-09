@@ -1,0 +1,71 @@
+.glass-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  border: 1px solid rgba(66, 70, 86, 0.35);
+  border-radius: var(--radius-xl);
+  background: var(--color-glass);
+  backdrop-filter: var(--blur-glass);
+  box-shadow: var(--shadow-card);
+  transition: border-color 300ms ease;
+}
+
+.glass-card--pad-lg {
+  padding: var(--space-lg);
+}
+
+.glass-card--pad-md {
+  padding: var(--space-md);
+}
+
+.glass-card--pad-none {
+  padding: 0;
+  overflow: hidden;
+}
+
+.glass-card--interactive:hover {
+  border-color: rgba(179, 197, 255, 0.4);
+}
+
+.glass-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.glass-card__heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.glass-card__icon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-lg);
+  background: rgba(0, 102, 255, 0.18);
+  color: var(--color-primary);
+}
+
+.glass-card__eyebrow {
+  display: block;
+  font: var(--text-label-md);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.glass-card__title {
+  font: var(--text-headline-sm);
+  letter-spacing: -0.01em;
+}
+
+.glass-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}

@@ -1,0 +1,133 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: 4rem 0 var(--space-xl);
+}
+
+.hero__title {
+  max-width: 52rem;
+  font: var(--text-headline-xl);
+  letter-spacing: -0.03em;
+}
+
+.hero__accent {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__intro {
+  max-width: 40rem;
+  color: var(--color-on-surface-variant);
+  font: var(--text-body-lg);
+}
+
+.hero__intro strong {
+  color: var(--color-on-surface);
+}
+
+.hero__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-section--contact {
+  margin-top: var(--space-xl);
+}
+
+.contact-actions {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.contact-actions > :first-child {
+  justify-self: start;
+  width: fit-content;
+}
+
+.contact-actions > .social-links {
+  justify-self: center;
+}
+
+.contact-actions > :last-child {
+  justify-self: end;
+}
+
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.about-item {
+  border: 1px solid rgba(66, 70, 86, 0.5);
+  border-radius: var(--radius-lg);
+  background: rgba(17, 24, 39, 0.7);
+}
+
+.about-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  font: var(--text-headline-sm);
+  list-style: none;
+}
+
+.about-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.about-item summary::after {
+  content: 'expand_more';
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+.about-item[open] summary::after {
+  content: 'expand_less';
+}
+
+.about-item p {
+  margin: 0;
+  padding: 0 1.25rem 1.15rem;
+  max-width: 46rem;
+  color: var(--color-on-surface-variant);
+  font: var(--text-body-lg);
+}
+
+.home-scroll-room {
+  height: 40vh;
+}
+
+@media (max-width: 720px) {
+  .contact-actions {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .contact-actions > .social-links,
+  .contact-actions > :last-child {
+    justify-self: start;
+  }
+
+  .hero {
+    padding-top: var(--space-lg);
+  }
+
+  .hero__title {
+    font: var(--text-headline-lg);
+    font-weight: 800;
+  }
+}
