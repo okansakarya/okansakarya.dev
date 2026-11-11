@@ -7,9 +7,9 @@ const POLL_INTERVAL_MS = 30_000
 type HealthState = 'checking' | 'up' | 'down'
 
 const LABELS: Record<HealthState, string> = {
-  checking: 'API kontrol ediliyor',
-  up: 'API çalışıyor',
-  down: 'API ulaşılamıyor',
+  checking: 'Supabase kontrol ediliyor',
+  up: 'Supabase bağlı',
+  down: 'Supabase ulaşılamıyor',
 }
 
 export function ApiHealthBadge() {

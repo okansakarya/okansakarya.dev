@@ -46,7 +46,7 @@ function ProjectDetailsForm({
     setSavingAction(action)
     setMessage(null)
     try {
-      const updated = await authorized((token) => updateProject(token, project.id, changes))
+      const updated = await authorized(() => updateProject(project.id, changes))
       onSaved(updated)
       setMessage({ tone: 'success', text: 'Değişiklikler kaydedildi.' })
     } catch (caught) {
@@ -78,7 +78,7 @@ function ProjectDetailsForm({
     }
     setDeleting(true)
     try {
-      await authorized((token) => deleteProject(token, project.id))
+      await authorized(() => deleteProject(project.id))
       navigate('/admin', { replace: true })
     } catch (caught) {
       setDeleting(false)
@@ -163,7 +163,7 @@ export function AdminProjectEditPage() {
   const { id = '' } = useParams()
   const { authorized } = useAuth()
   const load = useCallback(
-    (signal: AbortSignal) => authorized((token) => getAdminProject(token, id, signal)),
+    (signal: AbortSignal) => authorized(() => getAdminProject(id, signal)),
     [authorized, id],
   )
   const project = useResource(load)
@@ -205,10 +205,8 @@ export function AdminProjectEditPage() {
       const kind = item.kind
       patchUpload(item.id, { status: 'uploading' })
       try {
-        const asset = await authorized((token) =>
-          uploadAsset(token, id, kind, files[index], (progress) =>
-            patchUpload(item.id, { progress }),
-          ),
+        const asset = await authorized(() =>
+          uploadAsset(id, kind, files[index], (progress) => patchUpload(item.id, { progress })),
         )
         patchUpload(item.id, { status: 'done', progress: 1 })
         project.setData((current) => ({ ...current, assets: [...current.assets, asset] }))
@@ -228,7 +226,7 @@ export function AdminProjectEditPage() {
     setDeletingAssetId(assetId)
     setAssetError(null)
     try {
-      await authorized((token) => deleteAsset(token, id, assetId))
+      await authorized(() => deleteAsset(id, assetId))
       project.setData((current) => ({
         ...current,
         assets: current.assets.filter((asset) => asset.id !== assetId),

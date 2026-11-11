@@ -22,7 +22,7 @@ const FILTERS: { value: Filter; label: string }[] = [
 export function AdminGalleryPage() {
   const { authorized } = useAuth()
   const load = useCallback(
-    (signal: AbortSignal) => authorized((token) => listAdminProjects(token, signal)),
+    (signal: AbortSignal) => authorized(() => listAdminProjects(signal)),
     [authorized],
   )
   const projects = useResource(load)
@@ -55,7 +55,7 @@ export function AdminGalleryPage() {
 
   function copyLabel(assetId: string) {
     if (copyResult?.id !== assetId) {
-      return { icon: 'content_copy', text: 'CDN Linki' }
+      return { icon: 'content_copy', text: '1 Saatlik Link' }
     }
     return copyResult.ok
       ? { icon: 'check_circle', text: 'Kopyalandı' }
@@ -70,7 +70,7 @@ export function AdminGalleryPage() {
           <h1 className="page-heading__title">Medya & Video Galerisi</h1>
           <p className="page-heading__lead">
             Tüm projelere yüklenen görsel, video ve APK dosyaları. Yeni yükleme proje sayfasından
-            yapılır.
+            yapılır. Dosyalar özel bucket’ta durur; kopyalanan linkler 1 saat geçerlidir.
           </p>
         </div>
         <div className="page-heading__actions">

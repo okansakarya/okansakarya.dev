@@ -26,8 +26,8 @@ function CreateBanForm({ onCreated }: { onCreated: (ban: IpBan) => void }) {
     setSubmitting(true)
     setError(null)
     try {
-      const ban = await authorized((token) =>
-        createBan(token, {
+      const ban = await authorized(() =>
+        createBan({
           ip_address: ipAddress.trim(),
           reason: reason.trim(),
           duration_minutes: Number(duration),
@@ -102,7 +102,7 @@ function CreateBanForm({ onCreated }: { onCreated: (ban: IpBan) => void }) {
 export function AdminBansPage() {
   const { authorized } = useAuth()
   const load = useCallback(
-    (signal: AbortSignal) => authorized((token) => listBans(token, signal)),
+    (signal: AbortSignal) => authorized(() => listBans(signal)),
     [authorized],
   )
   const bans = useResource(load)
@@ -113,7 +113,7 @@ export function AdminBansPage() {
     setPendingIp(ban.ip_address)
     setActionError(null)
     try {
-      await authorized((token) => liftBan(token, ban.ip_address))
+      await authorized(() => liftBan(ban.ip_address))
       bans.setData((current) => current.filter((item) => item.ip_address !== ban.ip_address))
     } catch (caught) {
       setActionError(caught instanceof Error ? caught.message : 'Ban kaldırılamadı.')
@@ -142,7 +142,11 @@ export function AdminBansPage() {
         </div>
       </div>
 
-      <CreateBanForm onCreated={(ban) => bans.setData((current) => [ban, ...current])} />
+      <CreateBanForm
+        onCreated={(ban) =>
+          bans.setData((current) => [ban, ...current.filter((item) => item.ip_address !== ban.ip_address)])
+        }
+      />
 
       <section className="page-section">
         <div className="page-heading">

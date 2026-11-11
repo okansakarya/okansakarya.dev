@@ -2,13 +2,14 @@ import { createContext, useContext } from 'react'
 import type { AdminProfile } from '../lib/api'
 
 export type AuthContextValue = {
+  /** False until Supabase has restored any stored session. */
+  isReady: boolean
   isAuthenticated: boolean
-  /** Profile from `/auth/me`; null until it loads for the current token. */
   admin: AdminProfile | null
-  signIn: (username: string, password: string) => Promise<void>
+  signIn: (email: string, password: string) => Promise<void>
   signOut: () => void
-  /** Runs an admin request with the current token and signs out on HTTP 401. */
-  authorized: <T>(call: (token: string) => Promise<T>) => Promise<T>
+  /** Runs an admin request and signs out when the session is rejected (HTTP 401). */
+  authorized: <T>(call: () => Promise<T>) => Promise<T>
 }
 
 export const AuthContext = createContext<AuthContextValue | null>(null)

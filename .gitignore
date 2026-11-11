@@ -11,6 +11,16 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+.env.*
+!.env.example
+
+# Local Supabase project: schema SQL, CLI link state, and function source.
+# The link file names the cloud project, organization, and account email.
+supabase/
+
+# Local MCP config contains the Supabase project reference.
+.cursor/
 
 # Editor directories and files
 .vscode/*

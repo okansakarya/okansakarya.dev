@@ -14,7 +14,7 @@ export function LoginPage() {
   const location = useLocation()
   const redirectTo = (location.state as { from?: string } | null)?.from ?? '/admin'
 
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
@@ -28,11 +28,11 @@ export function LoginPage() {
     setSubmitting(true)
     setError(null)
     try {
-      await signIn(username, password)
+      await signIn(email.trim(), password)
       navigate(redirectTo, { replace: true })
     } catch (caught) {
       if (caught instanceof ApiError && caught.status === 401) {
-        setError('Kullanıcı adı veya şifre hatalı.')
+        setError('E-posta veya şifre hatalı.')
       } else {
         setError(caught instanceof Error ? caught.message : 'Giriş başarısız.')
       }
@@ -46,11 +46,12 @@ export function LoginPage() {
       <GlassCard eyebrow="Yönetici Konsolu" title="Admin Girişi" icon="lock_open">
         <form className="stack" onSubmit={handleSubmit} noValidate>
           <TextField
-            label="Kullanıcı Adı"
-            name="username"
+            label="E-posta"
+            name="email"
+            type="email"
             autoComplete="username"
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
             required
           />
           <TextField
@@ -72,7 +73,7 @@ export function LoginPage() {
             icon="login"
             block
             loading={submitting}
-            disabled={!username || !password}
+            disabled={!email.trim() || !password}
           >
             Giriş Yap
           </Button>

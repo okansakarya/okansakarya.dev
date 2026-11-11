@@ -54,8 +54,8 @@ function CreateProjectForm({ onCreated }: { onCreated: (project: Project) => voi
     setSubmitting(true)
     setError(null)
     try {
-      const project = await authorized((token) =>
-        createProject(token, { title, description, slug: slug.trim() || undefined }),
+      const project = await authorized(() =>
+        createProject({ title, description, slug: slug.trim() || undefined }),
       )
       onCreated(project)
     } catch (caught) {
@@ -118,7 +118,7 @@ export function AdminProjectsPage() {
   const { authorized } = useAuth()
   const navigate = useNavigate()
   const load = useCallback(
-    (signal: AbortSignal) => authorized((token) => listAdminProjects(token, signal)),
+    (signal: AbortSignal) => authorized(() => listAdminProjects(signal)),
     [authorized],
   )
   const projects = useResource(load)
@@ -129,8 +129,8 @@ export function AdminProjectsPage() {
     setPendingId(project.id)
     setActionError(null)
     try {
-      const updated = await authorized((token) =>
-        updateProject(token, project.id, { is_published: !project.is_published }),
+      const updated = await authorized(() =>
+        updateProject(project.id, { is_published: !project.is_published }),
       )
       projects.setData((current) =>
         current.map((item) => (item.id === updated.id ? updated : item)),
