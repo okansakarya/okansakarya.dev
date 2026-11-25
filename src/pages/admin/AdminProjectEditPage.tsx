@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useAuth } from '../../auth/AuthContext'
 import { useResource } from '../../hooks/useResource'
 import { deleteAsset, deleteProject, getAdminProject, updateProject, uploadAsset } from '../../lib/api'
+import { SITE_NAME, usePageMeta } from '../../lib/seo'
 import type { AssetKind, Project, ProjectUpdate } from '../../lib/api'
 import { ASSET_RULES, UPLOAD_ACCEPT, detectAssetKind, formatBytes } from '../../lib/assets'
 import { AssetTile } from '../../widgets/AssetTile/AssetTile'
@@ -167,6 +168,12 @@ export function AdminProjectEditPage() {
     [authorized, id],
   )
   const project = useResource(load)
+  const loaded = project.status === 'success' ? project.data : null
+  usePageMeta({
+    title: loaded ? `${loaded.title} | Yönetim` : `Proje | ${SITE_NAME}`,
+    path: `/admin/projects/${id}`,
+    index: false,
+  })
   const [uploads, setUploads] = useState<UploadItem[]>([])
   const [deletingAssetId, setDeletingAssetId] = useState<string | null>(null)
   const [assetError, setAssetError] = useState<string | null>(null)

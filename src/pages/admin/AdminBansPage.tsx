@@ -3,6 +3,7 @@ import type { FormEvent } from 'react'
 import { useAuth } from '../../auth/AuthContext'
 import { useResource } from '../../hooks/useResource'
 import { ApiError, MAX_BAN_MINUTES, createBan, liftBan, listBans } from '../../lib/api'
+import { usePageMeta } from '../../lib/seo'
 import type { IpBan } from '../../lib/api'
 import { Button } from '../../widgets/Button/Button'
 import { GlassCard } from '../../widgets/GlassCard/GlassCard'
@@ -100,6 +101,7 @@ function CreateBanForm({ onCreated }: { onCreated: (ban: IpBan) => void }) {
 }
 
 export function AdminBansPage() {
+  usePageMeta({ title: 'IP Banları | Yönetim', path: '/admin/bans', index: false })
   const { authorized } = useAuth()
   const load = useCallback(
     (signal: AbortSignal) => authorized(() => listBans(signal)),

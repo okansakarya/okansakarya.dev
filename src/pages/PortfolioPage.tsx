@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { profile } from '../content/profile'
 import { useResource } from '../hooks/useResource'
 import { listPublishedProjects } from '../lib/api'
+import { usePageMeta } from '../lib/seo'
 import { Button } from '../widgets/Button/Button'
 import { GlassCard } from '../widgets/GlassCard/GlassCard'
 import { ProjectCard } from '../widgets/ProjectCard/ProjectCard'
@@ -14,6 +15,7 @@ import './pages.css'
 import './PortfolioPage.css'
 
 export function PortfolioPage() {
+  usePageMeta()
   const projects = useResource(listPublishedProjects)
   const { hash } = useLocation()
 

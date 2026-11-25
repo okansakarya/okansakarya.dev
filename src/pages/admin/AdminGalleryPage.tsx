@@ -2,6 +2,7 @@ import { useCallback, useMemo, useState } from 'react'
 import { useAuth } from '../../auth/AuthContext'
 import { useResource } from '../../hooks/useResource'
 import { listAdminProjects } from '../../lib/api'
+import { usePageMeta } from '../../lib/seo'
 import type { AssetKind } from '../../lib/api'
 import { ASSET_RULES, formatBytes } from '../../lib/assets'
 import { AssetTile } from '../../widgets/AssetTile/AssetTile'
@@ -20,6 +21,7 @@ const FILTERS: { value: Filter; label: string }[] = [
 ]
 
 export function AdminGalleryPage() {
+  usePageMeta({ title: 'Medya | Yönetim', path: '/admin/gallery', index: false })
   const { authorized } = useAuth()
   const load = useCallback(
     (signal: AbortSignal) => authorized(() => listAdminProjects(signal)),

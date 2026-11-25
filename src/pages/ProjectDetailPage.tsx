@@ -2,6 +2,7 @@ import { useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 import { useResource } from '../hooks/useResource'
 import { ApiError, getPublishedProject } from '../lib/api'
+import { DEFAULT_DESCRIPTION, SITE_NAME, toMetaDescription, usePageMeta } from '../lib/seo'
 import { ASSET_RULES, assetsOfKind, formatDate } from '../lib/assets'
 import { AssetTile } from '../widgets/AssetTile/AssetTile'
 import { Button } from '../widgets/Button/Button'
@@ -15,6 +16,13 @@ export function ProjectDetailPage() {
   const { slug = '' } = useParams()
   const load = useCallback((signal: AbortSignal) => getPublishedProject(slug, signal), [slug])
   const project = useResource(load)
+  const loaded = project.status === 'success' ? project.data : null
+  usePageMeta({
+    title: loaded ? `${loaded.title} | ${SITE_NAME}` : `Proje | ${SITE_NAME}`,
+    description: loaded ? toMetaDescription(loaded.description) : DEFAULT_DESCRIPTION,
+    path: `/projects/${slug}`,
+    index: project.status !== 'error',
+  })
 
   if (project.status === 'loading') {
     return (

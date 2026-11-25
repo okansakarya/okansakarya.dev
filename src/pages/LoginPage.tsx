@@ -3,12 +3,14 @@ import type { FormEvent } from 'react'
 import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
 import { ApiError } from '../lib/api'
+import { usePageMeta } from '../lib/seo'
 import { Button } from '../widgets/Button/Button'
 import { GlassCard } from '../widgets/GlassCard/GlassCard'
 import { TextField } from '../widgets/TextField/TextField'
 import './pages.css'
 
 export function LoginPage() {
+  usePageMeta({ title: 'Admin Girişi | Okan Sakarya', path: '/login', index: false })
   const { isAuthenticated, signIn } = useAuth()
   const navigate = useNavigate()
   const location = useLocation()

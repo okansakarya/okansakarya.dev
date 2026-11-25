@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../auth/AuthContext'
 import { useResource } from '../../hooks/useResource'
 import { createProject, listAdminProjects, updateProject } from '../../lib/api'
+import { usePageMeta } from '../../lib/seo'
 import type { Project } from '../../lib/api'
 import { assetsOfKind } from '../../lib/assets'
 import { Button } from '../../widgets/Button/Button'
@@ -115,6 +116,7 @@ function CreateProjectForm({ onCreated }: { onCreated: (project: Project) => voi
 }
 
 export function AdminProjectsPage() {
+  usePageMeta({ title: 'Projeler | Yönetim', path: '/admin', index: false })
   const { authorized } = useAuth()
   const navigate = useNavigate()
   const load = useCallback(

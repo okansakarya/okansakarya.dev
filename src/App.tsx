@@ -15,6 +15,7 @@ import type { NavItem } from './widgets/AppShell/AppShell'
 import { Button } from './widgets/Button/Button'
 import { SessionCard } from './widgets/SessionCard/SessionCard'
 import { SocialLinks } from './widgets/SocialLinks/SocialLinks'
+import { usePageMeta } from './lib/seo'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
@@ -95,6 +96,8 @@ function AdminLayout() {
 }
 
 function NotFoundPage() {
+  const { pathname } = useLocation()
+  usePageMeta({ title: 'Sayfa bulunamadı | Okan Sakarya', path: pathname, index: false })
   return (
     <div className="page page--public">
       <PageState
