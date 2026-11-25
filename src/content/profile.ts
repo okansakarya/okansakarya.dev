@@ -14,7 +14,7 @@ export const profile = {
   availability: 'Yeni Fırsatlara ve Projelere Açık',
   headline: ['Kullanıcı Odaklı & Performanslı', 'Mobil & Web', 'Deneyimleri.'],
   intro:
-    '2 yıllık yazılım mühendisliği deneyimimle Flutter ve modern web teknolojileri üzerinde temiz kod mimarisiyle çalışıyorum.',
+    'Edirne yazılım mühendisiyim. Flutter ve modern web teknolojileriyle, temiz kod mimarisiyle mobil ve web uygulamaları geliştiriyorum.',
   highlights: [
     { icon: 'verified', label: '2+ Yıl Profesyonel Deneyim' },
     { icon: 'smartphone', label: 'Android & Cross-Platform Mobil' },
@@ -39,7 +39,7 @@ export const profile = {
     {
       question: 'Ben kimim?',
       answer:
-        'Okan Sakarya. Yazılım mühendisiyim; Flutter ile mobil, React ve FastAPI ile web tarafında çalışıyorum. Edirne’den remote çalışıyorum.',
+        'Okan Sakarya. Edirne yazılım mühendisiyim; Flutter ile mobil, React ve FastAPI ile web tarafında çalışıyorum. Edirne’den remote çalışıyorum.',
     },
     {
       question: 'Ne üzerine çalışıyorum?',

@@ -2,9 +2,9 @@ import { useEffect } from 'react'
 
 export const SITE_ORIGIN = 'https://www.okansakarya.dev'
 export const SITE_NAME = 'Okan Sakarya'
-export const DEFAULT_TITLE = 'Okan Sakarya | Yazılım Mühendisi'
+export const DEFAULT_TITLE = 'Okan Sakarya | Edirne Yazılım Mühendisi'
 export const DEFAULT_DESCRIPTION =
-  'Okan Sakarya, yazılım mühendisi. Flutter ile mobil, React ve FastAPI ile web uygulamaları geliştiriyorum. Edirne’den remote çalışıyorum.'
+  'Edirne yazılım mühendisi Okan Sakarya. Flutter ile mobil, React ve FastAPI ile web uygulamaları geliştiriyorum. Edirne’den remote çalışıyorum.'
 
 type PageMeta = {
   title?: string
